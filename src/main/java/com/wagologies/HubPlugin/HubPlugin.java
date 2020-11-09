@@ -40,7 +40,6 @@ public class HubPlugin extends JavaPlugin {
         {
             throw new Exception("Hub world doesn't exist");
         }
-        hubWorld.setPVP(false);
         hubWorld.setGameRuleValue("doDaylightCycle", "false");
         hubWorld.setTime(0);
         hubWorld.setWeatherDuration(0);
@@ -55,6 +54,9 @@ public class HubPlugin extends JavaPlugin {
     public static void TeleportToHub(Player player)
     {
         try {
+            int chunkx = HubPlugin.instance.configReader.getHubSpawnLocation().getBlockX() >> 4;
+            int chunkz = HubPlugin.instance.configReader.getHubSpawnLocation().getBlockZ() >> 4;
+            HubPlugin.instance.configReader.getHubSpawnLocation().getWorld().loadChunk(chunkx,chunkz);
             player.teleport(HubPlugin.instance.configReader.getHubSpawnLocation());
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,0 +1,8 @@
+name: HubPlugin
+main: com.wagologies.HubPlugin.HubPlugin
+version: 1.0
+commands:
+  hub:
+    usage: /hub
+    description: Teleports the using player to the hub
+    permission: hubplugin.hub

@@ -6,6 +6,7 @@ import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -49,5 +50,14 @@ public class HubPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         instance = null;
+    }
+
+    public static void TeleportToHub(Player player)
+    {
+        try {
+            player.teleport(HubPlugin.instance.configReader.getHubSpawnLocation());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

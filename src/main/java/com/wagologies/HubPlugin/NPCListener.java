@@ -1,13 +1,10 @@
 package com.wagologies.HubPlugin;
 
-import com.github.juliarn.npc.event.PlayerNPCInteractEvent;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
 public class NPCListener implements Listener {
-    @EventHandler
-    public void ClickedOnNpc(PlayerNPCInteractEvent event)
+    public void ClickedOnNpc()
     {
         /*switch (event.getNPC().getGameProfile().getName())
         {

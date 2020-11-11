@@ -39,4 +39,20 @@ public class ConfigReader {
             throw new Exception("Spawn world " + getHubWorldName() +" could not be found");
         }
     }
+    public Location getBedwarsSpawnLocation() throws Exception {
+        World spawnWorld = Bukkit.getWorld(getHubWorldName());
+        if(spawnWorld != null)
+        {
+            return new Location(
+                    spawnWorld,
+                    config.getInt("bedwarsLobbyPoint.x") + 0.5,
+                    config.getInt("bedwarsLobbyPoint.y"),
+                    config.getInt("bedwarsLobbyPoint.z") + 0.5
+            );
+        }
+        else
+        {
+            throw new Exception("Spawn world " + getHubWorldName() +" could not be found");
+        }
+    }
 }

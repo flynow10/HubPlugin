@@ -5,4 +5,3 @@ commands:
   hub:
     usage: /hub
     description: Teleports the using player to the hub
-    permission: hubplugin.hub

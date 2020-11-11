@@ -13,7 +13,7 @@ public class HubCommand implements CommandExecutor {
         if(commandSender instanceof Player && strings.length == 0)
         {
             Player player = (Player) commandSender;
-            teleportToHub(player);
+            HubPlugin.TeleportToHub(player);
             return true;
         }
         if(strings.length > 1 && commandSender.isOp())
@@ -21,7 +21,7 @@ public class HubCommand implements CommandExecutor {
             for(String string : strings) {
                 Player namedPlayer = Bukkit.getPlayer(string);
                 if (namedPlayer != null) {
-                    teleportToHub(namedPlayer);
+                    HubPlugin.TeleportToHub(namedPlayer);
                 }
                 else
                 {
@@ -31,13 +31,5 @@ public class HubCommand implements CommandExecutor {
             return true;
         }
         return false;
-    }
-    public void teleportToHub(Player player)
-    {
-        try {
-            player.teleport(HubPlugin.instance.configReader.getHubSpawnLocation());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

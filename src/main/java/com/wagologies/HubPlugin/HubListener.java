@@ -48,7 +48,7 @@ public class HubListener implements Listener {
     {
         event.setJoinMessage("Welcome to the server!");
         try {
-            event.getPlayer().teleport(HubPlugin.instance.configReader.getHubSpawnLocation());
+            HubPlugin.TeleportToHub(event.getPlayer());
         } catch (Exception e) {
             e.printStackTrace();
         }

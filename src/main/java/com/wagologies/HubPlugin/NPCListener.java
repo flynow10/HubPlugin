@@ -9,16 +9,16 @@ public class NPCListener implements Listener {
     @EventHandler
     public void ClickedOnNpc(PlayerNPCInteractEvent event)
     {
-        switch (event.getNPC().getGameProfile().getName())
+        /*switch (event.getNPC().getGameProfile().getName())
         {
             case "Bedwars":
                 JoinBedwarsLobby(event.getPlayer());
-        }
+        }*/
     }
 
     private void JoinBedwarsLobby(Player player) {
         for (Lobby lobby : HubPlugin.instance.lobbys) {
-            if(lobby.name == "Bedwars")
+            if(lobby.name.equals("Bedwars"))
             {
                 lobby.AddPlayer(player);
                 return;
@@ -29,10 +29,10 @@ public class NPCListener implements Listener {
     }
     private void CreateBedwarsLobby()
     {
-        try {
+        /*try {
             HubPlugin.instance.lobbys.add(new Lobby("Bedwars", HubPlugin.instance.configReader.getBedwarsSpawnLocation(), ))
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }
